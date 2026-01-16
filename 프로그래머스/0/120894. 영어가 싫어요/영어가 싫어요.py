@@ -1,10 +1,4 @@
 def solution(numbers):
-    answer = ''
-    num_dict = {'zero' : '0', 'one' : '1', 'two' : '2', 'three' : '3', 'four' : '4', 'five' : '5', 'six' : '6', 'seven' : '7', 'eight' : '8', 'nine' : '9'}
-    key = ''
-    for c in numbers:
-        key += c
-        if len(num_dict.get(key, '')) > 0:
-            answer += num_dict.get(key, '')
-            key = ''   
-    return int(answer)
+    for num, eng in enumerate(['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']):
+        numbers = numbers.replace(eng, str(num))
+    return int(numbers)
